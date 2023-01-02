@@ -33,3 +33,7 @@
 ## Route: `/`
 - Entrypoint of the app. An informative page for anonymous/unauthorized users. 
 - Authenticated users cannot reach this view.
+
+## Route: `/auth/login`
+- User login is handled here.
+- Protected route. Redirect to `/timeline` if user is already authenticated

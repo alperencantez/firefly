@@ -7,7 +7,7 @@ export default {
   data() {
     return {
       texts: ['secure', 'jovial', 'next-level'],
-      message: '',
+      search: '',
     };
   },
 };
@@ -20,17 +20,21 @@ export default {
       <h3 class="text-5xl py-2 font-light">Firefly</h3>
 
       <div class="flex gap-3">
-        <button
-          class="text-xl rounded px-3 py-1 outline outline-1 bg-transparent hover:bg-zinc-900 text-black hover:text-white ease-in duration-100"
-        >
-          Log in
-        </button>
+        <router-link to="/auth/login">
+          <button
+            class="text-xl rounded px-3 py-1 outline outline-1 bg-transparent hover:bg-zinc-900 text-black hover:text-white ease-in duration-100"
+          >
+            Log in
+          </button>
+        </router-link>
 
-        <button
-          class="rounded px-3 py-1 outline outline-1 bg-zinc-900 text-white text-xl"
-        >
-          Sign up
-        </button>
+        <router-link to="/auth/signup/">
+          <button
+            class="rounded px-3 py-1 outline outline-1 bg-zinc-900 text-white text-xl"
+          >
+            Sign up
+          </button>
+        </router-link>
       </div>
     </div>
   </div>
@@ -99,7 +103,10 @@ export default {
 
   <!-- Footer -->
   <div class="container mx-auto py-10 text-center">
-    <a href="" class="text-xl text-zinc-500 hover:text-purple-800"
+    <a
+      href="https://github.com/alperencantez/firefly"
+      target="_blank"
+      class="text-xl text-zinc-500 hover:text-purple-800"
       >see the github repo</a
     >
     <hr class="w-96 my-2 mx-auto" />
