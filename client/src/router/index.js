@@ -16,6 +16,21 @@ const router = createRouter({
       path: '/auth/signup',
       name: 'signup',
       component: SignUpVue,
+      beforeEnter: (to, from, next) => {
+        const authToken = localStorage.getItem('authToken');
+
+        if (!authToken) {
+          next();
+        } else {
+          fetch('http://localhost:5000/timeline', {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${authToken}`,
+            },
+          }).then((res) => (res.status == 403 ? next() : next('/timeline')));
+        }
+      },
     },
     {
       path: '/auth/login',
