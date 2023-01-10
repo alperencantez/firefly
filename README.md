@@ -32,7 +32,7 @@
 ## _Tech Stack_: JavaScript - TailwindCSS - Vue.js
 ## Route: `/`
 - Entrypoint of the app. An informative page for anonymous/unauthorized users. 
-- 
+
 ## Route: `/auth/login` (Protected)
 - User login is handled here.
 
