@@ -1,6 +1,16 @@
-<script></script>
+<script>
+import NavigationVue from '../components/Navigation.vue';
+
+export default {
+  components: {
+    NavigationVue,
+  },
+};
+</script>
+
 <template>
-  <div>
-    <h3>Timeline</h3>
-  </div>
+  <NavigationVue activeTabName="timeline" />
+  <div class="container mx-auto"></div>
 </template>
+
+<style></style>
