@@ -12,13 +12,13 @@
 >
 > -   [x] Sign Up
 >
-> -   [ ] Sign Out
+> -   [x] Sign Out
 
 ## 🤖 Byte (Posts on Firefly are called Bytes)
 
 > -   [x] Creating a Byte
 >
-> -   [ ] Creating a byte with a media
+> -   [x] Creating a byte with a media
 >
 > -   [x] Receive comments under a Byte which are also considered Bytes
 >
@@ -32,8 +32,12 @@
 ## _Tech Stack_: JavaScript - TailwindCSS - Vue.js
 ## Route: `/`
 - Entrypoint of the app. An informative page for anonymous/unauthorized users. 
-- Authenticated users cannot reach this view.
-
-## Route: `/auth/login`
+- 
+## Route: `/auth/login` (Protected)
 - User login is handled here.
-- Protected route. Redirect to `/timeline` if user is already authenticated
+
+## Route: `/auth/signup` (Protected)
+- New user registrations can be made in this route.
+
+## Route: `/timeline` (Protected)
+- Dashboard page of the social media app, users will see latest Bytes from their followings here.
