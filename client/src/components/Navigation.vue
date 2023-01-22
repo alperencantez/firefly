@@ -5,9 +5,9 @@ export default {
   data() {
     return {
       active:
-        'text-4xl px-6 py-2 border-2 border-b-violet-700 border-t-0 border-l-0 border-r-0',
+        'text-3xl px-8 py-2 border-2 border-b-violet-700 border-t-0 border-l-0 border-r-0',
       inactive:
-        'text-4xl text-zinc-300 hover:text-black px-6 py-2 border-2 border-b-white transition ease-in-out hover:border-b-violet-700 border-t-0 border-l-0 border-r-0 text-zinc-700',
+        'text-3xl text-gray-300 hover:text-black px-6 py-2 border-2 border-b-transparent transition ease-in-out hover:border-b-violet-700 border-t-0 border-l-0 border-r-0 text-zinc-700',
     };
   },
 
@@ -31,7 +31,7 @@ export default {
   <div id="main">
     <div class="container mx-auto">
       <div class="p-4 grid grid-cols-12">
-        <h3 class="text-5xl col-span-3">Firefly</h3>
+        <h3 class="text-4xl col-span-3">Firefly</h3>
 
         <div class="col-span-7 content-center">
           <RouterLink
@@ -41,8 +41,8 @@ export default {
           >
           <RouterLink
             to="/profile"
-            :class="[activeTabName == 'profile' ? active : inactive]"
-            >Profile</RouterLink
+            :class="[activeTabName == 'people' ? active : inactive]"
+            >People</RouterLink
           >
           <RouterLink
             to="/trending"

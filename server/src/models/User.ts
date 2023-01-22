@@ -36,5 +36,5 @@ schemaUser.pre<IUser>('save', function (next) {
     });
 });
 
-const User = mongoose.model<IUser>('user', schemaUser);
+const User = mongoose.model<IUser>('user', schemaUser, 'user');
 export default User;

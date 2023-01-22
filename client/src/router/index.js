@@ -56,21 +56,6 @@ const router = createRouter({
       path: '/timeline',
       name: 'timeline',
       component: TimelineVue,
-      beforeEnter: (to, from, next) => {
-        const authToken = localStorage.getItem('authToken');
-
-        if (!authToken) {
-          next('/auth/login');
-        } else {
-          fetch('http://localhost:5000/timeline', {
-            method: 'GET',
-            headers: {
-              'Content-Type': 'application/json',
-              Authorization: `Bearer ${authToken}`,
-            },
-          }).then((res) => (res.status == 403 ? next('/auth/login') : next()));
-        }
-      },
     },
   ],
 });

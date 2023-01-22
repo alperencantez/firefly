@@ -15,4 +15,4 @@ const schemaByte = new Schema(
     { timestamps: true }
 );
 
-export const Byte = mongoose.model('post', schemaByte);
+export const Byte = mongoose.model('post', schemaByte, 'post');
