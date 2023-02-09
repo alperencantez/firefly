@@ -30,3 +30,4 @@ coverage
 client/.prettierrc
 .env
 package-lock.json
+node_modules

@@ -21,7 +21,7 @@ export default {
 
       if (this.remaining < 1) {
         this.isDisabled = true;
-      } else if (this.remaining > 1 && this.isDisabled !== false) {
+      } else if (this.remaining >= 1 && this.isDisabled !== false) {
         this.isDisabled = false;
       } else if (this.remaining == 150) {
         this.isDisabled = true;
@@ -39,7 +39,9 @@ export default {
           content: this.byteContent,
           author: this.$props.userHandle,
         }),
-      }).then((res) => (res.status == 201 ? (this.byteContent = '') : null));
+      })
+        .then((res) => (res.status == 201 ? (this.byteContent = '') : null))
+        .then(() => this.$router.go(0));
     },
   },
 };
@@ -58,6 +60,7 @@ export default {
       placeholder="What's on your mind?"
       cols="30"
       rows="6"
+      maxlength="150"
     ></textarea>
     <span :class="[isDisabled ? 'mt-3 text-red-700' : 'mt-3']"
       >{{ remaining }} chars remaining</span
