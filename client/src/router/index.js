@@ -3,6 +3,7 @@ import MainVue from '../pages/Main.vue';
 import SignUpVue from '../pages/SignUp.vue';
 import LoginVue from '../pages/Login.vue';
 import TimelineVue from '../pages/Timeline.vue';
+import Search from '../pages/Search.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -56,6 +57,11 @@ const router = createRouter({
       path: '/timeline',
       name: 'timeline',
       component: TimelineVue,
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: Search,
     },
   ],
 });
