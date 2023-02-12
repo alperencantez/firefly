@@ -40,6 +40,7 @@ export class ByteController {
         const createdByte = await ByteController.createPost({
             content: req.body.content,
             author: req.body.user.handle,
+            authorDisplayName: req.body.authorDisplayName,
             media: './public/' + req.body.user.handle + imgName,
         });
 
@@ -55,6 +56,7 @@ export class ByteController {
             await ByteController.createPost({
                 content: req.body.content,
                 author: req.body.user.handle,
+                authorDisplayName: req.body.authorDisplayName,
             });
             return res.sendStatus(201);
         }

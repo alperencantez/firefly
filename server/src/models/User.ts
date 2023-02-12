@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 interface IUser {
-    name: String;
+    displayName: String;
     handle: String;
     email: String;
     password: String;
@@ -11,7 +11,7 @@ interface IUser {
 
 const schemaUser = new Schema<IUser>(
     {
-        name: String,
+        displayName: String,
         handle: {
             type: String,
             unique: true,

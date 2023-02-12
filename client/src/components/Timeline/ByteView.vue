@@ -7,8 +7,16 @@ export default {
     return {
       appr: 'Appreciate',
       depr: 'Depreciate',
-      diff: 0,
     };
+  },
+
+  props: {
+    content: String,
+    displayName: String,
+    handle: String,
+    createdAt: String,
+    likes: Number,
+    dislikes: Number,
   },
 
   methods: {
@@ -26,7 +34,7 @@ export default {
 
     calculateBytePostTime() {
       dayjs.extend(relativeTime);
-      return dayjs('Thu Jan 19 2023 23:20:31 GMT+0300 (GMT+03:00)').fromNow();
+      return dayjs(this.$props.createdAt).fromNow();
     },
   },
 };
@@ -44,8 +52,12 @@ export default {
         />
 
         <div>
-          <span class="text-xl font-bold text-zinc-800 block">Name</span>
-          <span class="text-md text-zinc-500"><small>@</small>handle</span>
+          <span class="text-xl font-bold text-zinc-800 block">{{
+            displayName
+          }}</span>
+          <span class="text-md text-zinc-500"
+            ><small>@</small>{{ handle }}</span
+          >
         </div>
       </div>
 
@@ -55,7 +67,7 @@ export default {
           <span class="text-zinc-500">{{ calculateBytePostTime() }}</span>
         </p>
         <p class="text-xl text-purple-700">
-          diff: <span class="text-zinc-500">{{ diff }}</span>
+          diff: <span class="text-zinc-500">{{ likes - dislikes }}</span>
         </p>
       </div>
     </div>
@@ -63,11 +75,7 @@ export default {
     <!-- Byte Content -->
     <div class="mt-4">
       <p class="text-xl">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum
-        molestias vero porro? Minus iusto dicta tempora eius earum, provident
-        cum totam doloremque qui impedit cupiditate fuga laboriosam eligendi.
-        Corrupti natus quos illo dolor ducimus nisi laudantium tempore,
-        cupiditate eveniet veritatis, atque praesentium non!
+        {{ content }}
       </p>
     </div>
 

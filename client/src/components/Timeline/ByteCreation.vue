@@ -10,6 +10,7 @@ export default {
 
   props: {
     userHandle: String,
+    userDisplayName: String,
   },
 
   methods: {
@@ -37,7 +38,7 @@ export default {
         },
         body: JSON.stringify({
           content: this.byteContent,
-          author: this.$props.userHandle,
+          authorDisplayName: this.$props.userDisplayName,
         }),
       })
         .then((res) => (res.status == 201 ? (this.byteContent = '') : null))

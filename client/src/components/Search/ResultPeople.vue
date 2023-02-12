@@ -2,7 +2,7 @@
 export default {
   props: {
     profileIconPath: String,
-    screenName: String,
+    displayName: String,
     handle: String,
   },
 
@@ -25,13 +25,13 @@ export default {
       />
 
       <div class="flex flex-col gap-2">
-        <h3 class="text-4xl">{{ screenName }}</h3>
-        <h3 class="text-2xl text-zinc-500"><small>@</small>{{ handle }}</h3>
+        <h3 class="text-3xl">{{ displayName }}</h3>
+        <h3 class="text-xl text-zinc-500"><small>@</small>{{ handle }}</h3>
       </div>
     </div>
 
     <button
-      class="text-2xl px-5 text-white rounded-xl bg-purple-900 hover:bg-purple-500"
+      class="text-xl px-5 text-white rounded-xl bg-purple-900 hover:bg-purple-500"
       @click="followUser(handle)"
     >
       Follow

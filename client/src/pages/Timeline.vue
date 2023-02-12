@@ -48,7 +48,10 @@ export default {
   <div class="container mx-auto">
     <div class="grid grid-cols-12 mt-8">
       <div class="col-span-3 border-0 border-r-2">
-        <ByteCreation :userHandle="currentUser.handle" />
+        <ByteCreation
+          :userDisplayName="currentUser.displayName"
+          :userHandle="currentUser.handle"
+        />
       </div>
 
       <div class="col-span-6 content-center ml-8"><ByteView /></div>
