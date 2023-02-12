@@ -7,7 +7,7 @@ export class SearchController {
         const dontAllowSpaceOnly: RegExp = /^(?!\s+$).+/;
         const query: string = await req.body.query.toString();
 
-        // Users cannot make DB request by sending space chars only
+        // Users cannot make DB request by sending space chars only.
         if (!dontAllowSpaceOnly.test(query)) return res.sendStatus(404);
 
         // Find bytes & users containing query
