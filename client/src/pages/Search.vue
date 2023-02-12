@@ -31,7 +31,6 @@ export default {
       const result = await fetch('http://localhost:5000/search', opt);
       const data = await result.json();
 
-      console.log(this.$data.res);
       this.$data.res = await data;
     },
   },
