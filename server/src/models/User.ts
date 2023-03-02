@@ -1,13 +1,7 @@
 const bcrypt = require('bcrypt');
 import mongoose from 'mongoose';
+import { IUser } from '../firefly.types';
 const { Schema } = mongoose;
-
-interface IUser {
-    displayName: String;
-    handle: String;
-    email: String;
-    password: String;
-}
 
 const schemaUser = new Schema<IUser>(
     {

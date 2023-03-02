@@ -1,3 +1,4 @@
+import { Credentials } from '../firefly.types';
 import { Request, Response } from 'express';
 const jwt = require('jsonwebtoken');
 import User from '../models/User';
@@ -27,11 +28,6 @@ export class Auth {
     }
 
     public static async userLogin(req: Request, res: Response): Promise<void> {
-        interface Credentials {
-            handleOrEmail: string;
-            password: string;
-        }
-
         const credentials: Credentials = await req.body;
 
         // Controls if there's any missing fields

@@ -19,7 +19,7 @@
 
 import { Request, Response } from 'express';
 import { Byte } from '../models/Byte';
-import { ObjectId } from 'mongoose';
+import { IUserBytes } from '../firefly.types';
 import * as crypto from 'crypto';
 
 export class ByteController {
@@ -81,13 +81,13 @@ export class ByteController {
 
     // Controller methods related to Reading Bytes
     public static async readByteFromProfile(req: Request, res: Response) {
-        interface IUserBytes {
-            _id: ObjectId;
-            content: String;
-            author: String;
-            comments: Array<Object>;
-            createdAt: String;
-        }
+        // interface IUserBytes {
+        //     _id: ObjectId;
+        //     content: String;
+        //     author: String;
+        //     comments: Array<Object>;
+        //     createdAt: String;
+        // }
 
         const userBytes: Array<IUserBytes> = await Byte.where({ author: req.params.handle });
         if (userBytes.length === 0) return res.sendStatus(404);
